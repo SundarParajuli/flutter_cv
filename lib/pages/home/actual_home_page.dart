@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -6,8 +7,41 @@ class ActualHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [ProfileAndCover(), Placeholder()],
+    return ListView(
+      children: [
+        const ProfileAndCover(),
+        const ListTile(
+          title: AutoSizeText("Sundar Parajuli"),
+          subtitle: AutoSizeText("Mobile Application developer"),
+          trailing: Icon(Icons.edit),
+        ),
+        const Card(
+          child: ListTile(
+            title: AutoSizeText("Career note"),
+            subtitle: AutoSizeText(
+                "I have a deep understanding of modern Android development and know how to write readable, maintainable, performant object-oriented Java and kotlin. I am experienced with Android development tools, care about quality and know what it means to ship high-quality code. I have a high-level understanding of end-to-end systems and have released at least one app or have a project in the works that I can tell you about. I have at least 5 years of professional experience."),
+            trailing: Icon(Icons.edit),
+          ),
+        ),
+        Card(
+          child: Column(
+            children: [
+              Row(
+                children: const [
+                  AutoSizeText("Languages"),
+                  Chip(
+                    avatar: CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      child: const Text('AB'),
+                    ),
+                    label: const Text('Aaron Burr'),
+                  )
+                ],
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 }
@@ -37,7 +71,7 @@ class ProfileAndCover extends StatelessWidget {
               )),
           Positioned(
               top: 130,
-              left: 30,
+              left: 20,
               child: ClipOval(
                 child: CachedNetworkImage(
                   imageUrl:
