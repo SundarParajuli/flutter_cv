@@ -69,15 +69,13 @@ class ProfileAndCover extends StatelessWidget {
                   child: const CircularProgressIndicator(),
                 ),
               )),
-          Positioned(
+          const Positioned(
               top: 130,
               left: 20,
-              child: ClipOval(
-                child: CachedNetworkImage(
-                  imageUrl:
-                      "https://media.licdn.com/dms/image/C5603AQGCGvwYL1tKZw/profile-displayphoto-shrink_800_800/0/1656007752560?e=2147483647&v=beta&t=hxciTyTyLlvVIcjKKaLSZYNpPjvWFn5fva-hygA2qYE",
-                  width: 80.0,
-                  height: 80.0,
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: CachedNetworkImageProvider(
+                  "https://media.licdn.com/dms/image/C5603AQGCGvwYL1tKZw/profile-displayphoto-shrink_800_800/0/1656007752560?e=2147483647&v=beta&t=hxciTyTyLlvVIcjKKaLSZYNpPjvWFn5fva-hygA2qYE",
                 ),
               )),
         ],
